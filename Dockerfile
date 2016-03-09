@@ -6,4 +6,5 @@ RUN sudo apt-get -y install gcc-4.9 g++-4.9
 RUN sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
 RUN sudo apt-get -y install build-essential
 RUN sudo apt-get -y install libc6-dbg gdb valgrind
+RUN sudo echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 CMD ["/bin/bash"]
